@@ -1,0 +1,380 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    background-color: #FFF;
+    width: 100vw;
+    min-height: 100vh;
+}
+
+main {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    width: calc(100% - 64px);
+    max-width: 1280px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 1rem;
+    margin-top: 64px;
+    display: flex;
+    flex-direction: column;
+}
+
+#menu-spacer {
+    width: 64px;
+    display: flex;
+    height: 100vh;
+}
+
+nav svg {
+    min-width: 1.5rem;
+    min-height: 1.5rem;
+}
+
+table tr {
+    border-bottom: 1px solid #E5E5E5;
+    text-align: center;
+}
+
+table tbody tr:last-child {
+    border-bottom: none;
+}
+
+#loading {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    background-color: #EBEBEB;
+    z-index: 99;
+    flex-direction: column;
+}
+
+#loading #container {
+    max-width: 350px;
+    width: 100%;
+    align-items: baseline;
+}
+#loading #loading-image {
+    z-index: 100;
+    width: 100%;
+    filter: drop-shadow(1px 1px 0px rgba(0, 0, 0, 0.4));
+}
+
+#loading #bar-container {
+    margin-top: 2rem;
+    height: 10px;
+    animation: loadingJ 2s cubic-bezier(0.17, 0.37, 0.43, 0.67) infinite;
+}
+
+#loading #bar-container {
+    margin-top: 2rem;
+    height: 10px;
+    width: 100%;
+    animation: loadingContainer 2s cubic-bezier(0.17, 0.37, 0.43, 0.67) infinite;
+}
+
+#loading #bar {
+    height: 10px;
+    width: 25px;
+    animation: loadingBar 2s cubic-bezier(0.17, 0.37, 0.43, 0.67) infinite;
+}
+
+@keyframes loadingContainer {
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(calc(100% - 25px), 0);
+    }
+}
+
+@keyframes loadingBar {
+    50% {
+        background-color: #FE7F00;
+    }
+}
+
+
+.menu-toggled {
+    width: 64px;
+}
+
+#login-page,
+#email-verification-page {
+    background-color: #F37036;
+}
+
+.btn-marcasite {
+    background-color: #444;
+    color: #F5F5F5;
+    height: 3rem;
+}
+
+.btn-marcasite.cancel {
+    border: solid 2px #EF4444;
+    background-color: transparent;
+    color: #EF4444;
+}
+
+.btn-marcasite.save {
+    background-color: #00BB98;
+}
+
+.input-marcasite {
+    background-color: #E5E5E5;
+    height: 42px;
+    font-size: 1rem;
+
+    &::placeholder {
+        font-size: 1rem;
+    }
+}
+
+.textarea-marcasite {
+    background-color: #E5E5E5;
+    min-height: 200px;
+    width: 100%;
+    font-size: 1rem;
+
+    &::placeholder {
+        font-size: 1rem;
+    }
+}
+
+.textarea-marcasite.success,
+.textarea-marcasite-message.success,
+.input-marcasite.success,
+.input-marcasite-message.success {
+    --tw-ring-color: #00BB98;
+}
+
+.textarea-marcasite-message.success,
+.input-marcasite-message.success {
+    color: #00BB98;
+}
+
+.textarea-marcasite.error,
+.textarea-marcasite-message.error,
+.input-marcasite.error,
+.input-marcasite-message.error {
+    --tw-ring-color: #EF4444;
+}
+
+.textarea-marcasite-message.error,
+.input-marcasite-message.error {
+    color: #EF4444;
+}
+
+#user-mycourse-page .approved{
+    color: #00BB98;
+}
+
+#user-mycourse-page .rejected{
+    color: #EF4444;
+}
+
+#user-mycourse-page .in_process{
+    color: #efc744;
+}
+
+#user-mycourse-page .pending{
+    color: #efc744;
+}
+
+/* #admin-sidebar,
+#user-sidebar {
+    background-color: #F5F5F5;
+    color: #171717;
+} */
+
+.alert-label {
+    font-size: 0.75rem;
+    line-height: 0.3rem;
+    background-color: #D6D6D6;
+}
+
+#admin-navbar,
+#user-navbar {
+    position: fixed;
+    height: 64px;
+    width: 100%;
+    background-color: #FFF;
+    color: #444444;
+    fill: #444444;
+    z-index: 8;
+}
+
+#admin-sidebar,
+#user-sidebar {
+    height: 100vh;
+    min-width: 64px;
+    width: 64px;
+    background-color: #EBEBEB;
+    color: #444444;
+    fill: #444444;
+    position: fixed;
+    z-index: 9;
+}
+
+#admin-sidebar .nav-item.active,
+#user-sidebar .nav-item.active {
+    background-color: #FFFFFF;
+}
+
+#admin-sidebar .close,
+#user-sidebar .close {
+    display: none;
+}
+
+#admin-sidebar.toggled .close,
+#user-sidebar.toggled .close {
+    display: flex;
+}
+
+#admin-sidebar .bars,
+#user-sidebar .bars {
+    display: flex;
+}
+
+#admin-sidebar.toggled .bars,
+#user-sidebar.toggled .bars {
+    display: none;
+}
+
+#admin-sidebar.toggled,
+#user-sidebar.toggled {
+    height: 100vh;
+    width: 100vw;
+    max-width: 200px;
+}
+
+#admin-sidebar .nav-title,
+#user-sidebar .nav-title {
+    margin-left: 1.5rem;
+}
+
+#admin-sidebar .nav-icon,
+#user-sidebar .nav-icon {
+
+}
+
+#admin-sidebar #hero-logo,
+#user-sidebar #hero-logo {
+    height: 30px;
+    filter: drop-shadow(1px 1px 0px rgba(0, 0, 0, 0.4));
+}
+/*
+#admin-sidebar #nav-links a,
+#user-sidebar #nav-links a {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+#admin-sidebar #nav-links a:hover,
+#user-sidebar #nav-links a:hover {
+    color: #FE7F00;
+}
+
+#admin-sidebar #nav-links #logout-icon,
+#user-sidebar #nav-links #logout-icon {
+    height: 1rem;
+}
+
+#admin-sidebar #nav-links a:hover #logout-icon path,
+#user-sidebar #nav-links a:hover #logout-icon path {
+    fill: #FE7F00;
+} */
+
+#email-verification-page #container {
+    text-align: center;
+}
+
+#email-verification-page #container input {
+    text-align: center;
+}
+
+
+#login-page #container,
+#email-verification-page #container {
+    background-color: #EBEBEB;
+    padding: 2rem;
+    width: 100vw;
+}
+
+#login-page #hero-logo,
+#email-verification-page #hero-logo {
+    width: 100%;
+    filter: drop-shadow(1px 1px 0px rgba(0, 0, 0, 0.4));
+}
+
+#login-page #form,
+#email-verification-page #form {
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+
+}
+
+#user-dashboard-page #container,
+#user-course-page #container,
+#user-config-page #container,
+#admin-course-page #container,
+#admin-config-page #container,
+#admin-dashboard-page #container {
+    background-color: #F5F5F5;
+    padding: 2rem;
+    margin-top: 2rem;
+    width: 100%;
+}
+
+/* sm */
+@media (min-width: 640px) {  }
+
+
+/* md */
+@media (min-width: 768px) {
+    main {
+        min-height: calc(100vh - 130.5px);
+    }
+
+    main.toggled {
+        width: calc(100% - 200px);
+    }
+
+    #menu-spacer.toggled {
+        width: 200px;
+    }
+
+    #login-page #container,
+    #email-verification-page #container {
+        width: 400px;
+    }
+
+    #admin-navbar #hero-logo {
+        height: auto;
+        width: 100%;
+    }
+
+    #admin-navbar #nav-links a {
+        font-size: 1.2rem;
+    }
+}
+
+/* lg */
+@media (min-width: 1024px) {
+}
+
+/* xl */
+@media (min-width: 1280px) {  }
+
+/* xxl */
+@media (min-width: 1536px) {  }
