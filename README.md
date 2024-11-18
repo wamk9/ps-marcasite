@@ -1,4 +1,4 @@
-# ps-marcasite
+# Teste técnico - Marcasite
 Este foi o desafio técnico para participar do processo seletivo da empresa Marcasite.
 
 O objetivo do teste estava em criar um sistema de inscrições para cursos, com os dados do aluno, diferençiação de valores por curso, integração com um gateway de pagamento (Neste caso foi utilizado o do MercadoPago), com controle de vendas, área administrativa com listagem de todos os inscritos, busca avançada feita pelo back-end sem data-table, possibilidade de edição, exclusão e exportação de inscritos em Excel e PDF.
@@ -14,11 +14,13 @@ Com tudo instalado, crie um arquivo `.env` baseado no `.env.example`, modificand
 php artisan jwt:secret
 php artisan migrate
 php artisan db:seed
+php artisan storage:link
 ```
 
 - O primeiro comando irá criar um token de validação JWT, esse token é único para cada instância;
-- O segundo comando irá rodar a migrate do Laravel, criando assim as tabelas necessárias no banco `ps-marcasite` e;
-- O terceiro comando irá preencher o banco de dados com dados de teste necessários para rodar o sistema.
+- O segundo comando irá rodar a migrate do Laravel, criando assim as tabelas necessárias no banco `ps-marcasite`;
+- O terceiro comando irá preencher o banco de dados com dados de teste necessários para rodar o sistema e;
+- O quarto comando irá fazer um link entre a pasta pública do storage com a pasta public, para o acesso ao usuário ser possível.
 
 Com os passos acima executados, basta rodarmos o comando `php artisan serve` e `npm run dev` para termos nosso ambiente de testes rodando.
 
